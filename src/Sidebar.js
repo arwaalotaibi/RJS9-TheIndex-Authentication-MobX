@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink  } from "react-router-dom";
 
 // Logo
 import logo from "./assets/theindex.svg";
+import authStore from "./stores/authStore";
 
 class Sidebar extends Component {
   render() {
@@ -16,7 +17,22 @@ class Sidebar extends Component {
           <h4 className="menu-item">
             <NavLink to="/books">BOOKS</NavLink>
           </h4>
-        </section>
+          </section>
+
+          {!authStore.user ? (
+          <h4 className="menu-item">
+            <NavLink to="/signup">signup</NavLink>
+            <NavLink to="/login">login</NavLink>
+          </h4> 
+          ):(
+          <botton 
+              className ="btn btn-danger" 
+              onClick={ () => authStore.logout() } 
+            >
+              Logout {authStore.user.username}
+            </botton>
+          )}
+          
       </div>
     );
   }

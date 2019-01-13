@@ -8,7 +8,7 @@ import AddAuthorCard from "./AddAuthorCard";
 
 // Store
 import authorStore from "./stores/AuthorStore";
-
+import authStore from "./stores/authStore" ;
 class AuthorsList extends Component {
   render() {
     const authorCards = authorStore.filteredAuthors.map(author => (
@@ -20,7 +20,7 @@ class AuthorsList extends Component {
         <h3>Authors</h3>
         <SearchBar store={authorStore} />
         <div className="row">
-          <AddAuthorCard />
+         { authStore.user && <AddAuthorCard />}
           {authorCards}
         </div>
       </div>

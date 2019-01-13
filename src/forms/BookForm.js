@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import bookStore from "../stores/BookStore";
 import { observer } from "mobx-react";
 
@@ -43,6 +42,7 @@ class BookForm extends Component {
           <option value="white">White</option>
           <option value="grey">Grey</option>
           <option value="purple">Purple</option>
+          <option value="orange">orange</option>
         </select>
         <input type="submit" value="Add Book" />
       </form>

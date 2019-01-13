@@ -21,6 +21,7 @@ class AddAuthorCard extends Component {
   }
   render() {
     const { open } = this.state;
+  
     return (
       <div className="col-lg-4 col-md-6 col-12">
         <div>
@@ -36,11 +37,13 @@ class AddAuthorCard extends Component {
               alt="+"
             />
           </div>
+         
           <div className="card-body">
             <h5 className="card-title">
               <span>Add Author</span>
             </h5>
           </div>
+          
         </div>
       </div>
     );
